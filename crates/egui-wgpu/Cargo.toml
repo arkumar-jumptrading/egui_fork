@@ -28,7 +28,6 @@ workspace = true
 
 [package.metadata.docs.rs]
 all-features = true
-rustdoc-args = ["--generate-link-to-definition"]
 
 [features]
 default = ["fragile-send-sync-non-atomic-wasm"]
