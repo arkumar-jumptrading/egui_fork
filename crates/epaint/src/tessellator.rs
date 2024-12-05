@@ -1455,7 +1455,7 @@ impl Tessellator {
             }
         }
 
-        let path_stroke = PathStroke::from(stroke).outside();
+        let path_stroke = PathStroke::from(stroke).inner();
         self.scratchpad_path.clear();
         self.scratchpad_path.add_circle(center, radius);
         self.scratchpad_path
