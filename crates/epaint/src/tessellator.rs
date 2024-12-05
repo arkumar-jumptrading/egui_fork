@@ -1524,7 +1524,7 @@ impl Tessellator {
         points.push(center + Vec2::new(0.0, -radius.y));
         points.extend(quarter.iter().rev().map(|p| center + Vec2::new(p.x, -p.y)));
 
-        let path_stroke = PathStroke::from(stroke).outside();
+        let path_stroke = PathStroke::from(stroke).inside();
         self.scratchpad_path.clear();
         self.scratchpad_path.add_line_loop(&points);
         self.scratchpad_path
@@ -1706,7 +1706,7 @@ impl Tessellator {
             path.clear();
             path::rounded_rectangle(&mut self.scratchpad_points, rect, rounding);
             path.add_line_loop(&self.scratchpad_points);
-            let path_stroke = PathStroke::from(stroke).outside();
+            let path_stroke = PathStroke::from(stroke).inside();
             if uv.is_positive() {
                 // Textured
                 let uv_from_pos = |p: Pos2| {
